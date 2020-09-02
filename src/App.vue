@@ -32,9 +32,31 @@
             <v-icon>mdi-account</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Клиенты</v-list-item-title>
+            <v-list-item-title>Родители</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+        <v-list-item link to="/pupils">
+          <v-list-item-action>
+            <v-icon>mdi-account-multiple</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Ученики</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item link to="/finance">
+          <v-list-item-action>
+            <v-icon>mdi-finance</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Финансы</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+
+
+
 
       </v-list>
     </v-navigation-drawer>
