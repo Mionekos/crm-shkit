@@ -19,7 +19,7 @@
             </v-btn>
           </template>
           <v-card>
-            <v-card-title class="headline blue lighten-2">
+            <v-card-title class="headline indigo">
               Добавить группу
             </v-card-title>
             <v-form
@@ -46,34 +46,60 @@
 
 
 
-                  <v-menu
-                      ref="menu"
-                      v-model="menu2"
-                      :close-on-content-click="false"
-                      :nudge-right="40"
-                      :return-value.sync="time"
-                      transition="scale-transition"
-                      offset-y
-                      max-width="290px"
-                      min-width="290px"
-                  >
-                    <template v-slot:activator="{ on, attrs }">
-                      <v-text-field
-                          class="mx-4"
-                          v-model="time"
-                          label="Время"
-                          readonly
-                          v-bind="attrs"
-                          v-on="on"
-                      ></v-text-field>
-                    </template>
-                    <v-time-picker
-                        v-if="menu2"
-                        v-model="time"
-                        full-width
-                        @click:minute="$refs.menu.save(time)"
-                    ></v-time-picker>
-                  </v-menu>
+<!--                  <v-menu-->
+<!--                      ref="menu"-->
+<!--                      v-model="menu2"-->
+<!--                      :close-on-content-click="false"-->
+<!--                      :nudge-right="40"-->
+<!--                      :return-value.sync="time"-->
+<!--                      transition="scale-transition"-->
+<!--                      offset-y-->
+<!--                      max-width="290px"-->
+<!--                      min-width="290px"-->
+<!--                  >-->
+<!--                    <template v-slot:activator="{ on, attrs }">-->
+<!--                      <v-text-field-->
+<!--                          class="mx-4"-->
+<!--                          v-model="time"-->
+<!--                          label="Время"-->
+<!--                          readonly-->
+<!--                          v-bind="attrs"-->
+<!--                          v-on="on"-->
+<!--                      ></v-text-field>-->
+<!--                    </template>-->
+<!--                    <v-time-picker-->
+<!--                        v-if="menu2"-->
+<!--                        v-model="time"-->
+<!--                        full-width-->
+<!--                        @click:minute="$refs.menu.save(time)"-->
+<!--                    ></v-time-picker>-->
+<!--                  </v-menu>-->
+
+                    <v-col class="mx-4 my-0">
+                      <v-row>
+                        <v-checkbox v-model="selected" label="Пн" value="Пн"></v-checkbox>
+                        <v-text-field class="mx-16" label="Время"></v-text-field>
+                      </v-row>
+                      <v-row>
+                        <v-checkbox v-model="selected" label="Вт" value="Вт"></v-checkbox>
+                      </v-row>
+                      <v-row>
+                        <v-checkbox v-model="selected" label="Ср" value="Ср"></v-checkbox>
+                      </v-row>
+                      <v-row>
+                        <v-checkbox v-model="selected" label="Чт" value="Чт"></v-checkbox>
+                      </v-row>
+                      <v-row>
+                        <v-checkbox v-model="selected" label="Пт" value="Пт"></v-checkbox>
+                      </v-row>
+                      <v-row>
+                        <v-checkbox v-model="selected" label="Сб" value="Сб"></v-checkbox>
+                      </v-row>
+                      <v-row>
+                        <v-checkbox v-model="selected" label="Вс" value="Вс"></v-checkbox>
+                      </v-row>
+                    </v-col>
+
 
                   <v-select
                       class="mx-4"
@@ -92,7 +118,7 @@
                   text
                   @click="dialog = false"
               >
-                I accept
+                Добавить
               </v-btn>
             </v-card-actions>
           </v-card>
